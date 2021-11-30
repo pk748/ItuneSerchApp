@@ -1,0 +1,129 @@
+<!-- // ************************************************************************************************************************************************** -->
+<!-- // HOME HEADING START-->
+<h2 nz-typography>Dashboard</h2>
+<nz-divider></nz-divider>
+<!-- // HOME HEADING END-->
+<!-- // ************************************************************************************************************************************************** -->
+
+<div class="section">
+    <div>
+        <nz-breadcrumb>
+            <nz-breadcrumb-item>
+                <span class="breadcrumb_text">Home</span>
+            </nz-breadcrumb-item>
+
+        </nz-breadcrumb>
+        <p></p>
+
+        <div class="row row-top">
+            <!-- Total Sessions -->
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <nz-card nzHoverable [nzCover]="coverTemplate"
+                    style=" color: #fff !important; background: #5C7AEA ;text-align: center !important; padding-top: 25px !important; padding-bottom: 1px !important; cursor:default !important">
+                    <h3 style="color: #fff !important;">Demo1</h3>
+                </nz-card>
+                <ng-template #coverTemplate>
+                    <i nz-icon nzType="apartment" style="color:#fff; font-size: 50px;  " nzTheme="outline"></i>
+                </ng-template>
+            </div>
+            <!-- Total Sessions -->
+
+            <!-- Success  -->
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <nz-card nzHoverable [nzCover]="successTemplate"
+                    style=" color: #fff !important; background: #D98C00 ;text-align: center !important; padding-top: 25px !important; padding-bottom: 1px !important; cursor:default !important">
+                    <h3 style="color: #fff !important;">Demo2 </h3>
+
+                </nz-card>
+                <ng-template #successTemplate>
+                    <i nz-icon nzType="file-done" style="color:#fff; font-size: 50px;  " nzTheme="outline"></i>
+                </ng-template>
+            </div>
+            <!-- Success  -->
+
+            <!-- Progress -->
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <nz-card nzHoverable [nzCover]="progressTemplate"
+                    style="color: #fff !important;  background: #00A19D ;text-align: center !important; padding-top: 25px !important; padding-bottom: 1px !important; cursor:default !important">
+                    <h3 style="color: #fff !important;">Demo3 </h3>
+
+                </nz-card>
+                <ng-template #progressTemplate>
+                    <i nz-icon nzType="radius-bottomleft" style="color:#fff; font-size: 50px;  " nzTheme="outline"></i>
+                </ng-template>
+            </div>
+            <!-- Progress -->
+
+            <!-- Failed -->
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <nz-card nzHoverable [nzCover]="failedTemplate"
+                    style="color: #fff !important;  background: #E05D5D ;text-align: center !important; padding-top: 25px !important; padding-bottom: 1px !important; cursor:default !important">
+                    <h3 style="color: #fff !important;"> Demo4 </h3>
+
+                </nz-card>
+                <ng-template #failedTemplate>
+                    <i nz-icon nzType="mac-command" style="color:#fff; font-size: 50px;  " nzTheme="outline"></i>
+                </ng-template>
+            </div>
+            <!-- Failed -->
+
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <nz-card>
+                <p style="font-size: 18px;">Summary Reports</p>
+                <nz-table #basicTable [nzData]="listOfSummaryData">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Address</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable.data">
+                            <td>{{ data.name }}</td>
+                            <td>{{ data.age }}</td>
+                            <td>{{ data.address }}</td>
+                            <td>
+                                <a>View</a>
+                                <nz-divider nzType="vertical"></nz-divider>
+                                <a>Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </nz-card>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <nz-card>
+                <p style="font-size: 18px;">Initiate Execution</p>
+                <nz-table #filterTable [nzData]="listOfData" nzTableLayout="fixed">
+                    <thead>
+                        <tr>
+                            <th *ngFor="let column of listOfColumns" [nzSortOrder]="column.sortOrder"
+                                [nzSortFn]="column.sortFn" [nzSortDirections]="column.sortDirections"
+                                [nzFilterMultiple]="column.filterMultiple" [nzFilters]="column.listOfFilter"
+                                [nzFilterFn]="column.filterFn">
+                                {{ column.name }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of filterTable.data">
+                            <td>{{ data.name }}</td>
+                            <td>{{ data.age }}</td>
+                            <td>{{ data.address }}</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </nz-card>
+        </div>
+    </div>
+</div>

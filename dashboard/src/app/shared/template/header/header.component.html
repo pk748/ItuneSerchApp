@@ -1,0 +1,61 @@
+<div class="header ant-menu-dark" id="header">
+  <div class="logo logo-dark">
+      <a href="" style="padding: 15px 20px 0 20px;">
+        <img src="../../../../assets/images/logo/logo1.jpeg" style="" *ngIf="showLogoWHT" width="100%" height="60px" alt="Logo">
+        <!-- <img src="assets/images/logo/crunch-logo_white.png" *ngIf="showLogoDRK" width="100%" height="100%" alt="Logo"> -->
+
+        <p class="logo-fold"  width="100%" height="100%" style="font-size: 20px;" >D</p>
+      </a>
+  </div>
+  <div class="logo logo-white">
+      <a href="">
+          <img src="assets/images/logo/crunch_logo.png" width="100%" height="100%" alt="Logo">
+          <!-- <h4>C<span style="color:skyblue;">M</span>W</h4> -->
+
+          <img class="logo-fold" src="assets/images/favicon/favicon.png" width="100%" height="100%" alt="Logo">
+      </a>
+  </div>
+  <div class="nav-wrap">
+      <ul class="nav-left">
+          
+          <li class="desktop-toggle">
+              <a (click)="toggleFold()">
+                  <i nz-icon [nzType]="isFolded? 'menu-unfold':'menu-fold'" theme="outline"></i>
+              </a>
+          </li>
+          <li class="mobile-toggle">
+              <a (click)="toggleExpand()">
+                  <i nz-icon [nzType]="isExpand? 'menu-fold': 'menu-unfold'" theme="outline"></i>
+              </a>
+          </li>
+
+          
+      </ul>
+
+      <ul class="nav-right">
+    
+  
+        <li >
+          <nz-button-group style="margin-top: 25px !important;text-align: center;" nz-dropdown [nzDropdownMenu]="menu2"  >
+            
+            <button nz-button style="background: transparent !important; color: #818d97 !important;"  (click)="openLogoutBtn()">demo@gmail.com</button>
+            <button nz-button  style="margin-bottom: 10px;background: transparent !important;">
+              <i nz-icon nzType="down" style="color:#0779e4;"></i>
+            </button>
+            
+          </nz-button-group>
+          <nz-dropdown-menu #menu2="nzDropdownMenu" style="text-align: center !important;">
+            <ul nz-menu style=" background: rgb(247, 244, 244) !important; border: 1px solid #ccc; ">
+              <li nz-menu-item><a>Dashboard</a></li>
+              <li nz-menu-item>
+                <a (click)="logout()" >
+              <i nz-icon nzType="logout" nzTheme="outline"></i>&nbsp; Logout
+            </a>
+          
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+        </li>
+      </ul>
+  </div>
+</div>
