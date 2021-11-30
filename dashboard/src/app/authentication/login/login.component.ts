@@ -36,19 +36,20 @@ export class LoginComponent implements OnInit {
     }
 
     console.log(this.loginForm)
+    this.router.navigate(['/dashboard/home']);
 
-    if (this.loginForm.value.userName == 'admin@gmail.com' && this.loginForm.value.password == "123456") {
-      this.router.navigate(['/dashboard/home']);
-    }else if (this.loginForm.value.userName == 'user@gmail.com' && this.loginForm.value.password == "123456") {
-      this.router.navigate(['/dashboard/home']);
-    }
-    else if (this.loginForm.value.userName == 'demo@gmail.com' && this.loginForm.value.password == "123456") {
-      this.router.navigate(['/dashboard/home']);
-    }
-    else {
-      this.error_message = 'User not authenticated!';
-      this.show_error_message = true;
-    }
+    // if (this.loginForm.value.userName == 'admin@gmail.com' && this.loginForm.value.password == "123456") {
+    //   this.router.navigate(['/dashboard/home']);
+    // }else if (this.loginForm.value.userName == 'user@gmail.com' && this.loginForm.value.password == "123456") {
+    //   this.router.navigate(['/dashboard/home']);
+    // }
+    // else if (this.loginForm.value.userName == 'demo@gmail.com' && this.loginForm.value.password == "123456") {
+    //   this.router.navigate(['/dashboard/home']);
+    // }
+    // else {
+    //   this.error_message = 'User not authenticated!';
+    //   this.show_error_message = true;
+    // }
 
 
   }
